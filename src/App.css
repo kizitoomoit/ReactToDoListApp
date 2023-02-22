@@ -85,3 +85,8 @@ addTask input:focus{
   color: white;
   font-size: large;
 }
+
+.time {
+  color:dodgerblue;
+  font-size: 50px;
+}

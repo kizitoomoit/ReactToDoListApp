@@ -1,11 +1,17 @@
 import './App.css';
-import { useState } from "react"
-import { Task } from "./Task"
+import { useState, useEffect } from "react";
+import { Task } from "./Task";
 
 function App() {
 
 const [todoList, setTodoList] = useState([]);
 const [newTask, setNewTask] = useState("");
+const [dateState, setDateState] = useState(new Date());
+
+useEffect(() => {
+  setInterval(() => setDateState(new Date()), 30000);
+}, []);
+
 
   const handleChange = (event) => {
     setNewTask(event.target.value);
@@ -46,6 +52,15 @@ const [newTask, setNewTask] = useState("");
       <input placeholder="Write your task here..." onChange={handleChange} />
       <button onClick={addTask}>Add Task</button>
     </div>
+ 
+      <h1 className="time"> {dateState.toLocaleDateString('en-US', {
+        hour: 'numeric',
+        minute: 'numeric',
+        seconds: 'numeric',
+        hour12: true,
+
+      })}</h1>
+
 
     <div className="list">
       <div>
