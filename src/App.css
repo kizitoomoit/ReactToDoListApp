@@ -55,8 +55,8 @@ addTask input:focus{
 }
 
 .task {
-  width: 500px;
   height: 50px;
+  width: auto;
   display: flex;
   margin: 15px;
   align-items: center;
@@ -67,26 +67,44 @@ addTask input:focus{
 .task button {
   width: 80px;
   height: 40px;
-  margin-left: 10px;
+  /*margin-left: 10px;
+  margin-right: 10px;*/
   text-align: center;
   cursor: pointer;
   border: none;
   border-radius: 3px;
+}
+.task h1 {
+  margin-right: 20px;
+}
+
+.taskbtns {
+  margin-left: auto;
+  background-color: lightblue;
+  align-items: center;
+  justify-content: center;
 }
 
 .completebtn {
   background-color: green;
   height: 3px;
   color: white;
+  margin-right: 10px;
 }
 
 .deletebtn {
   background-color: red;
   color: white;
   font-size: large;
+  margin-left: 10px;
 }
 
 .time {
   color:dodgerblue;
-  font-size: 50px;
+  font-size: 20px;
+  display: flex;
+}
+
+.time h1 {
+   margin-left: 20px;
 }

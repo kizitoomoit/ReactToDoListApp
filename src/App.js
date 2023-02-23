@@ -52,14 +52,22 @@ useEffect(() => {
       <input placeholder="Write your task here..." onChange={handleChange} />
       <button onClick={addTask}>Add Task</button>
     </div>
- 
-      <h1 className="time"> {dateState.toLocaleDateString('en-US', {
+    <div className="time">
+      <h1>{dateState.toLocaleDateString('en-GB',{
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric'
+      })}
+      </h1>
+      <h1> {dateState.toLocaleString('en-US', {
         hour: 'numeric',
         minute: 'numeric',
         seconds: 'numeric',
         hour12: true,
 
       })}</h1>
+      
+    </div> 
 
 
     <div className="list">
