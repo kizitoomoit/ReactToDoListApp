@@ -61,7 +61,6 @@ addTask input:focus{
   margin: 15px;
   align-items: center;
   justify-content: center;
-  border: 3px solid green;
 }
 
 .task button {
@@ -107,4 +106,52 @@ addTask input:focus{
 
 .time h1 {
    margin-left: 20px;
+}
+
+@media screen and (max-width: 480px) {
+.addTask input {
+  height: 30px;
+  border: 1px solid blue;
+  font-size: 15px;
+  border-radius: 3px;
+  
+}
+.addTask button:focus {
+  border: 1px solid green;
+}
+.addTask button {
+  height: 34px;
+  font-size: 15px;
+  width: auto;
+
+}
+.task h1{
+  font-size: 10px;
+  word-wrap: bread-word;
+  max-width: 180px;
+}
+.task button {
+  height: 30px;
+  font-size: 10px;
+  width: 60px;
+  
+}
+.taskbtns {
+  width: auto;
+
+}
+.time {
+  font-size: 15px;
+}
+.completebtn {
+  margin-right: 2px;
+
+}
+.deletebtn{
+  margin-left: 2px;
+
+}
+.task {
+  border: 3px solid red;
+}
 }

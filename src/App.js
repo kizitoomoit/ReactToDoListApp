@@ -25,7 +25,8 @@ useEffect(() => {
       taskName: newTask,
       completed: false,
     };
-    setTodoList([...todoList, task]);
+    //checks and prevents the app from adding empty todo list to the array
+    setTodoList(task.taskName !== ""? [...todoList, task] : todoList);
     }
 
     const deleteTask = (id) => {
@@ -40,14 +41,15 @@ useEffect(() => {
         if (task.id === id) {
           return {...task, completed: true};
 
-        }else {
+        } else {
           return task;
         }
       })
       );
     };
 
-  return <div className="App">
+  return (
+  <div className="App">
     <div className="addTask">
       <input placeholder="Write your task here..." onChange={handleChange} />
       <button onClick={addTask}>Add Task</button>
@@ -85,7 +87,8 @@ useEffect(() => {
       </div>
 
     </div>
-    </div>;
+    </div>
+  );
 }
 
 export default App;
