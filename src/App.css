@@ -100,12 +100,36 @@ addTask input:focus{
 
 .time {
   color:dodgerblue;
+  text-align: center;
   font-size: 20px;
-  display: flex;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
 }
 
 .time h1 {
    margin-left: 20px;
+   display: inline-block;
+   align-items: center;
+   text-align: center;
+}
+.time h6 {
+  font-size: 5px;
+  width: 60px;
+  display: inline-block;
+  
+}
+.time img {
+  width: 100%;
+
+
+}
+.clockncalendar {
+  display: inline-block;
+  text-align: right;
+  align-items: right;
+  justify-content: right;
 }
 
 @media screen and (max-width: 480px) {
@@ -150,8 +174,5 @@ addTask input:focus{
 .deletebtn{
   margin-left: 2px;
 
-}
-.task {
-  border: 3px solid red;
 }
 }

@@ -1,6 +1,10 @@
 import './App.css';
 import { useState, useEffect } from "react";
 import { Task } from "./Task";
+import calendar from './images/calendar.png';
+import calendarblue from './images/calendarblue.png';
+import clock from './images/clock.png';
+import { FaBeer } from "react-icons/fa";
 
 function App() {
 
@@ -17,6 +21,12 @@ useEffect(() => {
     setNewTask(event.target.value);
   };
 
+  const handleKeyDown = (event)  => {
+    if (event.keyCode === 13){
+      addTask();
+      
+    }
+  }
   const addTask = () => {
     
     const task = {
@@ -51,16 +61,39 @@ useEffect(() => {
   return (
   <div className="App">
     <div className="addTask">
-      <input placeholder="Write your task here..." onChange={handleChange} />
+      <input placeholder="Write your task here..." onKeyDown={handleKeyDown} onChange={handleChange} />
+      
       <button onClick={addTask}>Add Task</button>
     </div>
+
+    <div className="clockncalendar">
     <div className="time">
+
+      <div>
+      <h6>
+        <img src={calendar} alt="Calendar" />
+      </h6>
+      </div>
+
+      <div>
       <h1>{dateState.toLocaleDateString('en-GB',{
         day: 'numeric',
         month: 'short',
         year: 'numeric'
       })}
-      </h1>
+        </h1>
+
+      </div>
+    </div> 
+
+     <div className="time">
+      <div>
+      <h6>
+      <img src={clock} alt="clock icon"/>
+      </h6>
+      </div>
+
+      <div>
       <h1> {dateState.toLocaleString('en-US', {
         hour: 'numeric',
         minute: 'numeric',
@@ -68,9 +101,12 @@ useEffect(() => {
         hour12: true,
 
       })}</h1>
-      
-    </div> 
+      </div>
+      </div> 
 
+
+
+    </div>
 
     <div className="list">
       <div>
