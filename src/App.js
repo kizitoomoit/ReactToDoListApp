@@ -9,6 +9,42 @@ function App() {
 const [todoList, setTodoList] = useState([]);
 const [newTask, setNewTask] = useState("");
 const [dateState, setDateState] = useState(new Date());
+// state to store time
+const [time, setTime] = useState(0);
+
+//state to check stopwatch running or not
+const [isRunning, setIstRunning] = useState(false);
+
+useEffect(()=> {
+  let intervalId;
+  if(isRunning) {
+    //Setting time from 0 to 1 every 10 milisecond using js setInterval method
+    intervalId = setInterval(() => setTime(time + 1), 10);
+  }
+  return () => clearInterval(intervalId);
+}, [isRunning, time]);
+
+//Hour calculation
+const hours = Math.floor(time / 3600000);
+
+//Minutes calculation
+const minutes = Math.floor((time % 3600000) / 6000);
+
+// Seconds calculation
+const seconds = Math.floor((time % 6000) / 100);
+
+// Millisecons calculations
+const milliseconds = time % 100;
+
+// method to start and stop timer
+const startAndStop = () => {
+  setIstRunning(!isRunning);
+};
+
+// Method to reset timer back to 0
+const reset = () => {
+  setTime(0);
+};
 
 useEffect(() => {
   setInterval(() => setDateState(new Date()), 30000);
@@ -63,6 +99,25 @@ useEffect(() => {
       
       <button onClick={addTask}>Add Task</button>
     </div>
+
+      <div className = "stopwatch-container">
+          <h4>H : Min : Sec : Mill</h4>
+
+        <p className ="stopwatch">
+          {hours}:{minutes.toString().padStart(2, "0")}:
+          {seconds.toString().padStart(2, "0")}:
+          {milliseconds.toString().padStart(2, "0")}
+        </p>
+        
+      <div className ="stopwatch-buttons">
+        <button className="stopwatch-button" onClick={startAndStop}>
+          {isRunning ? "Stop" : "Start"}
+        </button>
+        <button className="stopwatch-button" onClick={reset}>Reset</button>
+      </div>
+
+      </div>
+      
 
     <div className="clockncalendar">
     <div className="time">

@@ -131,7 +131,42 @@ addTask input:focus{
   align-items: right;
   justify-content: right;
 }
+.stopwatch{
+  text-align: center;
+  color: dodgerblue;
+  font-size: 30px;
+  margin-top: -10px;
+  margin-bottom: 5px;
+}
 
+.stopwatch-container{
+  background-color: rgb(228, 228, 228);
+  width: 100%;
+  height: 15vh;
+  
+
+}
+.stopwatch-container h4 {
+  color: dodgerblue;
+}
+.stopwatch-buttons button:first-child {
+  background-color: green;
+}
+
+.stopwatch-buttons button:last-child {
+  background-color: red;
+}
+.stopwatch-buttons button {
+  margin: 10px;
+  background-color: blue;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+  text-align: center;
+
+}
 @media screen and (max-width: 480px) {
 .addTask input {
   height: 30px;
@@ -184,5 +219,15 @@ addTask input:focus{
   display: inline-block;
   justify-content: center;
   text-align: center;
+}
+.stopwatch{
+  text-align: center;
+  color: dodgerblue;
+  font-size: 20px;
+  margin-top: -10px;
+  margin-bottom: 5px;
+}
+.stopwatch-container h4 {
+  font-size: 12px;
 }
 }
