@@ -1,10 +1,8 @@
 import './App.css';
 import { useState, useEffect } from "react";
 import { Task } from "./Task";
-import calendar from './images/calendar.png';
 import calendarblue from './images/calendarblue.png';
 import clock from './images/clock.png';
-import { FaBeer } from "react-icons/fa";
 
 function App() {
 
@@ -71,7 +69,7 @@ useEffect(() => {
 
       <div>
       <h6>
-        <img src={calendar} alt="Calendar" />
+        <img src={calendarblue} alt="Calendar" />
       </h6>
       </div>
 

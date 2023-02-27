@@ -165,7 +165,12 @@ addTask input:focus{
 
 }
 .time {
-  font-size: 15px;
+  font-size: 10px;
+  display: inline-block;
+}
+.time h6 {
+  width: 30px;
+  margin-bottom: 5px;
 }
 .completebtn {
   margin-right: 2px;
@@ -174,5 +179,10 @@ addTask input:focus{
 .deletebtn{
   margin-left: 2px;
 
+}
+.clockncalendar {
+  display: inline-block;
+  justify-content: center;
+  text-align: center;
 }
 }
